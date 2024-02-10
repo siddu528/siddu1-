@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Hospital Registration</title>
+</head>
+<body>
+<h2>Hospital Registration</h2>
+<center>{{msg}}</center>
+<table align="center" width="60%">
+	<tr>
+		<td> 
+			<form name= "hospital" autocomplete="off" method='post' >
+			<font color="red">*</font>
+			Hospital Name<br>
+			<input type="text" required  autofocus="on" name="HospitalName"><br>
+			<font color="red">*</font>
+			Address<br>
+			<input required class="from-control" type="text" name="Address"><br>
+			<font color="red">*</font>
+			Contact Number<br>
+			<input required class="from-control" type="text" name="ContactNumber"><br> 
+			<font color="red">*</font>
+			Website<br>
+			<input required class="from-select" type="text" name="Website"><br>
+			<center>
+				<br>
+				<input type="submit" class="btn-success" name="submit" value="submit">
+				<input type="reset" name="cancel" value="cancel" class="btn btn-warning">
+			</center>
+{% csrf_token %}
+		</form>
+		</td>
+	</tr>
+	
+</table>
+</body>
+</html>
+</body>
+</html>

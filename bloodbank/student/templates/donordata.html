@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Donor Details</title>
+</head>
+<body>
+	<h2>Donor Details</h2>
+<table align="center" border="1"> 
+<tr>
+	<th>Id</th>
+	<th>Name</th>
+	<th>Last Name</th>
+	<th>Contact Number</th>
+	<th>Landline Number</th>
+	<th>Email id</th>
+	<th>Address-1</th>
+	<th>Address-2</th>
+	<th>Gender</th>
+	<th>Blood-GroupRequired</th>
+	<th>Date of Birth</th>
+	<th>Qualification</th>
+	<th>Profession</th>
+	<th>Height</th>
+	<th>Weight</th>
+	<th>FoodHabit</th>
+	<th>AnyDisease</th>
+	<th>Delete</th>
+</tr>
+{% for d in data %}
+<tr>
+	<td>{{d.id}}</td>
+	<td>{{d.Name}}</td>
+	<td>{{d.LastName}}</td>
+	<td>{{d.ContactNumber}}</td>
+	<td>{{d.LandlineNumber}}</td>
+	<td>{{d.Emailid}}</td>
+	<td>{{d.Address1}}</td>
+	<td>{{d.Address2}}</td>
+	<td>{{d.Gender}}</td>
+	<td>{{d.BloodGroupRequired}}</td>
+	<td>{{d.DateofBirth}}</td>
+	<td>{{d.Qualification}}</td>
+	<td>{{d.Profession}}</td>
+	<td>{{d.Height}}</td>
+	<td>{{d.Weight}}</td>
+	<td>{{d.FoodHabit}}</td>
+	<td>{{d.AnyDisease}}</td>
+	<td>
+		<form name="frm" method="post">
+			<input type="hidden" name="sid" value="{{d.id}}">
+			<input class='btn btn-danger'type="submit" name="Delete" value="Delete">
+		{% csrf_token %}
+		</form>	
+	</td>	
+</tr>
+{%endfor%}
+</table>
+</body>
+</html>

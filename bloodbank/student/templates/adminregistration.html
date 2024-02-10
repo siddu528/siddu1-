@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Admin Registration</title>
+</head>
+<body>
+<h2>Admin Registration</h2>
+{% include "menu.html" %}
+<center>{{msg}}</center>
+<table align="center" width="60%">
+	<tr>
+		<td> 
+			<form name= "hospital" autocomplete="off" method='post' >
+			<font color="red">*</font>
+			User Name<br>
+			<input type="text" required  autofocus="on" name="username"><br>
+			<font color="red">*</font>
+			Mobile Number<br>
+			<input required class="from-control" type="text" name="mobilnumber"><br>
+			<font color="red">*</font>
+			Create Password<br>
+			<input required class="from-control" type="password" name="createpassword"><br> 
+			<font color="red">*</font>
+			Confirm Password<br>
+			<input required class="from-select" type="password" name="confirmpassword"><br>
+			<center>
+				<br>
+				<input type="submit" class="btn-success" name="register" value="register">
+				<input type="reset" name="cancel" value="cancel" class="btn btn-warning">
+			</center>
+{% csrf_token %}
+		</form>
+		</td>
+	</tr>
+	
+</table>
+</body>
+</html>
+</body>
+</html>

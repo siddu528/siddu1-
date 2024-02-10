@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Search Hospital</title>
+	<meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+	<h2>Search Hospital</h2>
+<center>
+	<form name="search" method="post" autocomplete="off">
+		<select name="searchby">
+			<option value="1">By Id</option>
+			<option value="2">By HospitalName</option>
+			<option value="3">By ContactNumber</option>
+		</select>
+		<input type="text" name="value" required>
+		<input type="submit" name="btn submit" value="search" class="btn btn-primary">
+		{% csrf_token %}
+	</form>
+	
+</center>
+{%if data %}
+<table align="center" border="1"> 
+<tr>
+	<th>Id</th>
+	<th>Hospital Name</th>
+	<th>Address</th>
+	<th>Contact Number</th>
+	<th>Website</th>
+</tr>
+{% for d in data %}
+<tr>
+	<td>{{d.id}}</td>
+	<td>{{d.HospitalName}}</td>
+	<td>{{d.Address}}</td>
+	<td>{{d.ContactNumber}}</td>
+	<td>{{d.Website}}</td>
+</tr>
+{%endfor%}
+</table>
+{%endif%}
+</body>
+</html>

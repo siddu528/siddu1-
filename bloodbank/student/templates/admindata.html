@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Admin Details</title>
+</head>
+<body>
+	<h2>Admin Details</h2>
+<table align="center" border="1"> 
+<tr>
+	<th>Id</th>
+	<th>User Name</th>
+	<th>Mobile Number</th>
+	<th>Create Password</th>
+	<th>Confirm Password</th>
+	<th>Delete</th>
+</tr>
+{% for d in data %}
+<tr>
+	<td>{{d.id}}</td>
+	<td>{{d.username}}</td>
+	<td>{{d.mobilnumber}}</td>
+	<td>{{d.createpassword}}</td>
+	<td>{{d.confirmpassword}}</td>
+	<td>
+		<form name="frm" method="post">
+			<input type="hidden" name="sid" value="{{d.id}}">
+			<input class='btn btn-danger'type="submit" name="Delete" value="Delete">
+		{% csrf_token %}
+		</form>	
+	</td>	
+</tr>
+{%endfor%}
+</table>
+</body>
+</html>

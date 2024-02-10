@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>reciver</title>
+	<meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+</head>
+<body>
+	<h2>Receiver</h2>
+	<center>{{msg}}</center>
+<table align="center" width="60%">
+	<tr>
+		<td> 
+			<form name= "reciver" autocomplete="off" method='post' >
+			<font color="red">*</font>
+			Name<br>
+			<input type="text" required  autofocus="on" name="Name"><br>
+			<font color="red">*</font>
+			Last Name<br>
+			<input required class="from-select" type="text" name="LastName"><br>
+			<font color="red">*</font>
+			Contact Number<br>
+			<input required class="from-select" type="text" name="ContactNumber"><br> 
+			<font color="red">*</font>
+			Landline Number<br>
+			<input required class="from-select" type="text" name="LandlineNumber"><br> 
+			<font color="red">*</font>
+			Email id<br>
+			<input required class="from-select" type="email" autofocus="on" name="Emailid"><br>
+			<font color="red">*</font>
+			Address 1<br>
+			<input type="address" required  autofocus="on" name="Address1"><br>
+			<font color="red">*</font>
+			Address 2<br>
+			<input type="address" required  autofocus="on" name="Address2"><br>
+			<font color="red">*</font>
+			Gender
+				<select class="from-select" name="Gender"><br>
+				<option>female</option>
+				<option>male</option>
+				<option>Trangender</option>			
+				</select><br><br>
+			<font color="red">*</font>
+			Blood Group Required<br>
+				<select class="from-select" name="BloodGroupRequired"><br>
+				<option>A+</option>
+				<option>B+</option>
+				<option>AB-</option>			
+				</select><br>
+			Date of Birth<br>
+			<input required class="from-select" type="text" name="DateofBirth"><br>
+		<center>
+				<input type="submit" class="btn-success" name="submit" value="submit">
+				<input type="cancel" class="btn-warning" name="cancel" value="cancel">
+		</center>
+{% csrf_token %}
+		</form>
+		</td>
+	</tr>	
+
+
+</body>
+</html>
